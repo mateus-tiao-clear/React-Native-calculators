@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import {
   StyleSheet,
-  Text,
-  Dimensions,
-  TouchableHighlight,
   View,
 } from "react-native";
 import Button from "./src/Components/Button";
@@ -19,7 +16,7 @@ export default App = () => {
   });
 
   function addDigit(n) {
-    if (n === "." && displayValue.initial.includes(".")) {
+    if (n === "." && !clearDisplay && displayValue.initial.includes(".")) {
       return;
     }
 
@@ -42,8 +39,6 @@ export default App = () => {
       });
     }
   }
-
-  console.log(displayValue);
 
   function clearMemory() {
     setDisplayValue({
